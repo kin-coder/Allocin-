@@ -1,0 +1,804 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (175.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (207.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMovies (20190801101454)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year" integer, "genre" varchar, "synopsis" text, "director" varchar, "allocine_rating" float, "my_rating" integer, "already_seen" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190801101454_create_movies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190801101454"]]
+  ↳ bin/rails:9
+  [1m[35m (203.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-01 10:23:03.926759"], ["updated_at", "2019-08-01 10:23:03.926759"]]
+  ↳ bin/rails:9
+  [1m[35m (193.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beowulf"], ["year", 1999], ["genre", "Fantastic, Action, Epouvante-horreur"], ["synopsis", "La Terre a traverse de nombreuses crises et cataclysmes. Les hommes vivent dans la peur et dans l'obscurite car les tenebres voilent desormais la lumiere du soleil. Dans cet univers hostile, erre un homme maudit et solitaire, Beowulf, fruit des amours interdites d'une mortelle avec le diable. Pour vaincre le monstre qui est en lui, Beowulf doit combattre le mal. Son plus redoutable adversaire est une creature tapie dans les combles d'une forteresse. Invincible, d'une sauvagerie sans nom, elle tue quotidiennement puis disparait des l'aube. "], ["director", "Graham Baker"], ["allocine_rating", 1.2], ["my_rating", 1], ["already_seen", 0], ["created_at", "2019-08-01 10:36:18.784819"], ["updated_at", "2019-08-01 10:36:18.784819"]]
+  [1m[35m (142.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bix"], ["created_at", "2019-08-01 12:07:00.243184"], ["updated_at", "2019-08-01 12:07:00.243184"]]
+  [1m[35m (139.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (1.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (6.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (35.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "L'EXORCISTE"], ["year", 2001], ["genre", "Epuvante-horreur"], ["synopsis", "L'actrice Chris McNeil est inquiète au sujet de sa fillette Regan : après que l'on ait entendu des bruits curieux venant de sa chambre, la petite a changé, proférant de constantes insanités. Une force para-normale l'habite, qui coûte la vie au metteur en scène de Chris. Désespérée, cette dernière fait appel à deux exorcistes... "], ["director", "William Friedkin"], ["allocine_rating", 3.9], ["my_rating", 1], ["already_seen", 1], ["created_at", "2019-08-01 12:16:34.680119"], ["updated_at", "2019-08-01 12:16:34.680119"]]
+  [1m[35m (246.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (33.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (34.6ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "OSS117 LE CAIRE NID D'ESPIONS"], ["year", 2006], ["genre", "Comédie,Espion,Action"], ["synopsis", "Égypte, 1955, le Caire est un véritable nid d'espions. "], ["director", "William Friedkin"], ["allocine_rating", 3.9], ["my_rating", 1], ["already_seen", 1], ["created_at", "2019-08-01 12:20:36.112243"], ["updated_at", "2019-08-01 12:20:36.112243"]]
+  [1m[35m (279.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "OSS117 LE CAIRE NID D'ESPIONS"], ["year", 2006], ["genre", "Comédie,Espion,Action"], ["synopsis", "Égypte, 1955, le Caire est un véritable nid d'espions. "], ["director", "Michel Hazanavicius"], ["allocine_rating", 3.5], ["my_rating", 1], ["already_seen", 1], ["created_at", "2019-08-01 12:22:56.428479"], ["updated_at", "2019-08-01 12:22:56.428479"]]
+  [1m[35m (134.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "genre" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["genre", "Epouvante-horreur"], ["updated_at", "2019-08-01 12:28:48.592853"], ["id", 3]]
+  [1m[35m (145.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.4ms)[0m  [1m[33mUPDATE "movies" SET "allocine_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["allocine_rating", 4.7], ["updated_at", "2019-08-01 12:30:59.079311"], ["id", 1]]
+  [1m[35m (119.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (0.9ms)[0m  [1m[33mUPDATE "movies" SET "genre" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["genre", "Comédie"], ["updated_at", "2019-08-01 12:33:16.683277"], ["id", 3]]
+  [1m[35m (136.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."already_seen" = ? LIMIT ?[0m  [["already_seen", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."already_seen" = ? LIMIT ?[0m  [["already_seen", 1], ["LIMIT", 11]]
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.6ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 4]]
+  [1m[35m (140.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "I Will Fear No Evil"], ["year", 2016], ["genre", "Tall tale"], ["synopsis", "You said they were looking for you. If they know where you work, they certainly know where you live."], ["director", "Rodrick Price"], ["allocine_rating", 0.64], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:30.015563"], ["updated_at", "2019-08-01 14:16:30.015563"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (125.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (2.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "If Not Now, When?"], ["year", 1941], ["genre", "Fanfiction"], ["synopsis", "You've been formally charged with three counts of murder, the bombing of government property, conspiracy to commit terrorism, treason, and sedition. The penalty for which is death by firing squad. You have one chance and only one chance to save your life. You must tell us the identity or whereabouts of codename V. If your information leads to his capture, you will be released from this facility immediately. Do you understand what I'm telling you? You can return to your life, Miss Hammond. All you have to do is cooperate."], ["director", "Miss Abe Walker"], ["allocine_rating", 0.11], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:30.150067"], ["updated_at", "2019-08-01 14:16:30.150067"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (179.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rosemary Sutcliff"], ["year", 1977], ["genre", "Mythopoeia"], ["synopsis", "I've not come for what you've hoped to do. I've come for what you did."], ["director", "Jimmie Abshire"], ["allocine_rating", 0.46], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:30.349189"], ["updated_at", "2019-08-01 14:16:30.349189"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (195.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "To Sail Beyond the Sunset"], ["year", 2000], ["genre", "Fanfiction"], ["synopsis", "Tonight's your big night. Are you ready for it?... Are we ready for it?"], ["director", "Mrs. Tamiko Lowe"], ["allocine_rating", 0.26], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:30.571159"], ["updated_at", "2019-08-01 14:16:30.571159"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (200.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "After Many a Summer Dies the Swan"], ["year", 1991], ["genre", "Fiction in verse"], ["synopsis", "Beneath this mask there is more than flesh. Beneath this mask there is an idea, Mr. Creedy. And ideas are bulletproof."], ["director", "Elvin Gusikowski"], ["allocine_rating", 0.79], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:30.804324"], ["updated_at", "2019-08-01 14:16:30.804324"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (190.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Death Be Not Proud"], ["year", 1938], ["genre", "Fiction in verse"], ["synopsis", "There are no coincidences, Delia... only the illusion of coincidence."], ["director", "Bibi Daugherty"], ["allocine_rating", 0.28], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:31.012341"], ["updated_at", "2019-08-01 14:16:31.012341"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (256.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Needle's Eye"], ["year", 1904], ["genre", "Horror"], ["synopsis", "You got to me? You did this to me? You cut my hair? You tortured me? You tortured me! Why?"], ["director", "Thaddeus Roob"], ["allocine_rating", 0.95], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:31.301961"], ["updated_at", "2019-08-01 14:16:31.301961"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (120.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gone with the Wind"], ["year", 1977], ["genre", "Humor"], ["synopsis", "It's my home. I call it the Shadow Gallery."], ["director", "Palma Volkman DVM"], ["allocine_rating", 0.01], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:31.480641"], ["updated_at", "2019-08-01 14:16:31.480641"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (187.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Wings of the Dove"], ["year", 1940], ["genre", "Metafiction"], ["synopsis", "By sun-up if you're not the sorriest piece of ass in all'a London... you'll certainly be the sorest!"], ["director", "Carlos Weber"], ["allocine_rating", 0.09], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:31.675428"], ["updated_at", "2019-08-01 14:16:31.675428"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (124.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Heart Is a Lonely Hunter"], ["year", 2007], ["genre", "Horror"], ["synopsis", "I'm not questioning your powers of observation; I'm merely remarking upon the paradox of asking a masked man who he is."], ["director", "Jose Frami MD"], ["allocine_rating", 0.98], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:31.810953"], ["updated_at", "2019-08-01 14:16:31.810953"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (122.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Clouds of Witness"], ["year", 1907], ["genre", "Narrative nonfiction"], ["synopsis", "What was true in that cell is just as true now. What you felt in there has nothing to do with me."], ["director", "Jade Welch Sr."], ["allocine_rating", 0.29], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:31.941698"], ["updated_at", "2019-08-01 14:16:31.941698"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (217.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brandy of the Damned"], ["year", 1921], ["genre", "Humor"], ["synopsis", "We're under siege here, the whole city's gone mad!"], ["director", "Cedrick Wunsch"], ["allocine_rating", 0.14], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:32.167916"], ["updated_at", "2019-08-01 14:16:32.167916"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (231.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Heart Is a Lonely Hunter"], ["year", 1945], ["genre", "Fiction in verse"], ["synopsis", "Are you going to kill me now?"], ["director", "Stacee Schmidt"], ["allocine_rating", 0.97], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:32.409292"], ["updated_at", "2019-08-01 14:16:32.409292"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (201.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cover Her Face"], ["year", 2010], ["genre", "Biography/Autobiography"], ["synopsis", "Your powers of observation continue to serve you well."], ["director", "Fairy Hickle"], ["allocine_rating", 0.27], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:32.621163"], ["updated_at", "2019-08-01 14:16:32.621163"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (230.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Violent Bear It Away"], ["year", 1906], ["genre", "Fantasy"], ["synopsis", "I'll tell you what I wish. I wish I had been there! I wish I had the chance for a face-to-face. Just one chance, that's all I'd need!"], ["director", "Tona Altenwerth"], ["allocine_rating", 0.48], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:32.859304"], ["updated_at", "2019-08-01 14:16:32.859304"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (260.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Little Hands Clapping"], ["year", 2006], ["genre", "Horror"], ["synopsis", "Tell me... do you like music, Mr. Finch?"], ["director", "Emmanuel Nicolas"], ["allocine_rating", 0.49], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:33.129205"], ["updated_at", "2019-08-01 14:16:33.129205"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (225.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Catskill Eagle"], ["year", 2002], ["genre", "Horror"], ["synopsis", "I remember them arguing at night. Mum wanted to leave the country. Dad refused. He said if we ran away, they would win. Win, like it was a game."], ["director", "Marlon Bogisich"], ["allocine_rating", 0.71], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:33.366226"], ["updated_at", "2019-08-01 14:16:33.366226"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (217.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Everything is Illuminated"], ["year", 2012], ["genre", "Narrative nonfiction"], ["synopsis", "But on this most auspicious of nights, permit me then, in lieu of the more commonplace sobriquet, to suggest the character of this dramatis persona."], ["director", "Su Smith"], ["allocine_rating", 0.94], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:33.592234"], ["updated_at", "2019-08-01 14:16:33.592234"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (282.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Wealth of Nations"], ["year", 1907], ["genre", "Realistic fiction"], ["synopsis", "Oh please, have mercy!"], ["director", "Kasey Adams"], ["allocine_rating", 0.04], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:33.887638"], ["updated_at", "2019-08-01 14:16:33.887638"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (223.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Other Side of Silence"], ["year", 1932], ["genre", "Horror"], ["synopsis", "Listen to me, you bleeding sod, England prevails because I say it does! And so does every lazy bum on this show, and that includes you! Find another DOP, or find yourself another job!"], ["director", "Kizzy Kohler"], ["allocine_rating", 0.18], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:34.120888"], ["updated_at", "2019-08-01 14:16:34.120888"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (241.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Time to Kill"], ["year", 1930], ["genre", "Fanfiction"], ["synopsis", "Sutler can no longer trust you, can he, Mr. Creedy? And we both know why. After I destroy Parliament, his only chance will be to offer them someone else. Some other piece of meat. And who will that be? You, Mr. Creedy. A man as smart as you has probably considered this. A man as smart as you probably has a plan. That plan is the reason Sutler no longer trusts you. It's the reason why you're being watched right now, why there are eyes and ears in every room of this house and a tap on every phone."], ["director", "Buck Spencer"], ["allocine_rating", 0.59], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:34.372832"], ["updated_at", "2019-08-01 14:16:34.372832"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (235.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nine Coaches Waiting"], ["year", 2012], ["genre", "Short story"], ["synopsis", "Tell me... do you like music, Mr. Finch?"], ["director", "Brain Hettinger DVM"], ["allocine_rating", 0.61], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:34.618528"], ["updated_at", "2019-08-01 14:16:34.618528"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (200.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Monstrous Regiment of Women"], ["year", 2019], ["genre", "Fable"], ["synopsis", "Oh, not tonight Bishop... not tonight!"], ["director", "Johnathan Nitzsche"], ["allocine_rating", 0.05], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:34.833736"], ["updated_at", "2019-08-01 14:16:34.833736"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (202.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lilies of the Field"], ["year", 2015], ["genre", "Fantasy"], ["synopsis", "You're insane!"], ["director", "Lane Windler"], ["allocine_rating", 0.48], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:35.047142"], ["updated_at", "2019-08-01 14:16:35.047142"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (207.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Unweaving the Rainbow"], ["year", 1972], ["genre", "Tall tale"], ["synopsis", "There are no coincidences, Delia... only the illusion of coincidence."], ["director", "Bridget Bahringer"], ["allocine_rating", 0.23], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:35.265166"], ["updated_at", "2019-08-01 14:16:35.265166"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (200.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The World, the Flesh and the Devil"], ["year", 1971], ["genre", "Fantasy"], ["synopsis", "There is no court in this country for men like Prothero."], ["director", "Van Walsh"], ["allocine_rating", 0.19], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:35.479608"], ["updated_at", "2019-08-01 14:16:35.479608"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (194.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "I Know Why the Caged Bird Sings"], ["year", 1960], ["genre", "Historical fiction"], ["synopsis", "I'm afraid that won't work either. Now, you have to understand, Evey. I don't want this for either of us, but I couldn't see any other way. You were unconscious, and I had to make a decision. If I had left you there, right now, you'd be in one of Creedy's interrogation cells. They'd imprison you, torture you, and, in all probability, kill you in the pursuit of finding me. After what you did, I couldn't let that happen, so I picked you up and carried you to the only place I knew you'd be safe: here, to my home."], ["director", "Humberto Ondricka"], ["allocine_rating", 0.11], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:35.685150"], ["updated_at", "2019-08-01 14:16:35.685150"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (217.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Heart Is a Lonely Hunter"], ["year", 1959], ["genre", "Textbook"], ["synopsis", "I've not come for what you've hoped to do. I've come for what you did."], ["director", "Isidro Pouros"], ["allocine_rating", 0.84], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:35.914019"], ["updated_at", "2019-08-01 14:16:35.914019"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (204.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beneath the Bleeding"], ["year", 1999], ["genre", "Science fiction"], ["synopsis", "You said they were looking for you. If they know where you work, they certainly know where you live."], ["director", "Dr. Rich Langosh"], ["allocine_rating", 0.39], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:36.131640"], ["updated_at", "2019-08-01 14:16:36.131640"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (164.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dance Dance Dance"], ["year", 1964], ["genre", "Biography/Autobiography"], ["synopsis", "I'll tell you what I wish. I wish I had been there! I wish I had the chance for a face-to-face. Just one chance, that's all I'd need!"], ["director", "Jacques Wisozk"], ["allocine_rating", 0.75], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:36.311573"], ["updated_at", "2019-08-01 14:16:36.311573"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (116.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Wings of the Dove"], ["year", 1957], ["genre", "Mythopoeia"], ["synopsis", "The time has come for me to meet my maker and to repay him in kind for all that he's done."], ["director", "Hector Dooley"], ["allocine_rating", 0.42], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:36.438161"], ["updated_at", "2019-08-01 14:16:36.438161"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (130.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Far-Distant Oxus"], ["year", 1977], ["genre", "Historical fiction"], ["synopsis", "The only thing that you and I have in common, Mr. Creedy, is we're both about to die."], ["director", "Miss Brinda Koch"], ["allocine_rating", 0.09], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:36.579587"], ["updated_at", "2019-08-01 14:16:36.579587"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (114.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Time to Kill"], ["year", 1929], ["genre", "Realistic fiction"], ["synopsis", "I want this country to realize that we stand on the edge of oblivion. I want every man, woman and child to understand how close we are to chaos. I want everyone to remember why they need us!"], ["director", "Cedrick Sipes"], ["allocine_rating", 0.03], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:36.702073"], ["updated_at", "2019-08-01 14:16:36.702073"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (125.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "I Sing the Body Electric"], ["year", 1986], ["genre", "Humor"], ["synopsis", "Defiant to the end, huh? You won't cry like him, will you? You're not afraid of death. You're like me."], ["director", "Octavio Moen"], ["allocine_rating", 0.68], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:36.835797"], ["updated_at", "2019-08-01 14:16:36.835797"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (115.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Look to Windward"], ["year", 1966], ["genre", "Short story"], ["synopsis", "There are no coincidences, Delia... only the illusion of coincidence."], ["director", "Ed Leuschke"], ["allocine_rating", 0.18], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:36.961835"], ["updated_at", "2019-08-01 14:16:36.961835"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (130.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vanity Fair"], ["year", 1928], ["genre", "Biography/Autobiography"], ["synopsis", "After what happened. After what they did. I thought about killing myself. I knew that one day you'd come for me. I didn't know what they were going to do. I swear to you. Read my journal."], ["director", "Harry Kling"], ["allocine_rating", 0.57], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:37.105384"], ["updated_at", "2019-08-01 14:16:37.105384"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Heart Is a Lonely Hunter"], ["year", 1973], ["genre", "Speech"], ["synopsis", "At last, we finally meet. I have something for you, Chancellor; a farewell gift. For all the things you've done, for the things you might have done, and for the only thing you have left."], ["director", "Jayne Kassulke"], ["allocine_rating", 0.38], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:37.212429"], ["updated_at", "2019-08-01 14:16:37.212429"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (130.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vile Bodies"], ["year", 1987], ["genre", "Narrative nonfiction"], ["synopsis", "He cared more about revenge than he did about her."], ["director", "Marcelino Daniel"], ["allocine_rating", 0.83], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:37.352863"], ["updated_at", "2019-08-01 14:16:37.352863"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (249.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fame Is the Spur"], ["year", 1953], ["genre", "Fanfiction"], ["synopsis", "I wish I wasn't afraid all the time, but... I am."], ["director", "Roosevelt Abshire V"], ["allocine_rating", 0.46], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:37.609989"], ["updated_at", "2019-08-01 14:16:37.609989"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (181.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Many Waters"], ["year", 1922], ["genre", "Mythopoeia"], ["synopsis", "You're insane!"], ["director", "Dr. Keeley Mills"], ["allocine_rating", 0.92], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:37.804170"], ["updated_at", "2019-08-01 14:16:37.804170"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (113.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Golden Apples of the Sun"], ["year", 1957], ["genre", "Fantasy"], ["synopsis", "Listen to me, you bleeding sod, England prevails because I say it does! And so does every lazy bum on this show, and that includes you! Find another DOP, or find yourself another job!"], ["director", "Ms. Murray Stiedemann"], ["allocine_rating", 0.73], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:37.930023"], ["updated_at", "2019-08-01 14:16:37.930023"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (146.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "By Grand Central Station I Sat Down and Wept"], ["year", 1977], ["genre", "Essay"], ["synopsis", "Now that's done with. It's time to have a look at your face. Take off your mask."], ["director", "Mattie O'Reilly V"], ["allocine_rating", 0.33], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:38.087176"], ["updated_at", "2019-08-01 14:16:38.087176"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (249.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Time To Murder And Create"], ["year", 1902], ["genre", "Narrative nonfiction"], ["synopsis", "Violence can be used for good."], ["director", "Clifton Gorczany"], ["allocine_rating", 0.36], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:38.349023"], ["updated_at", "2019-08-01 14:16:38.349023"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (171.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cover Her Face"], ["year", 1948], ["genre", "Fairy tale"], ["synopsis", "We're oft to blame, and this is too much proved, that with devotion's visage and pious action we do sugar on the devil himself."], ["director", "Alvin Abernathy IV"], ["allocine_rating", 0.74], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:38.530033"], ["updated_at", "2019-08-01 14:16:38.530033"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (179.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Parliament of Man"], ["year", 1975], ["genre", "Narrative nonfiction"], ["synopsis", "I promise you it will be like nothing you have ever seen."], ["director", "Norman Kirlin Jr."], ["allocine_rating", 0.54], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:38.718733"], ["updated_at", "2019-08-01 14:16:38.718733"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (143.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Infinite Jest"], ["year", 1980], ["genre", "Fiction in verse"], ["synopsis", "Every day, gentlemen. Every day that brings us closer to November. Every day that man remains free is one more failure. 347 days, gentlemen. 347 failures!"], ["director", "Dewitt Moore"], ["allocine_rating", 0.28], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:38.875325"], ["updated_at", "2019-08-01 14:16:38.875325"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (235.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "In a Dry Season"], ["year", 1970], ["genre", "Fairy tale"], ["synopsis", "A building is a symbol, as is the act of destroying it. Symbols are given power by people. Alone, a symbol is meaningless, but with enough people, blowing up a building can change the world."], ["director", "Robena Runolfsdottir Jr."], ["allocine_rating", 0.24], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:39.129217"], ["updated_at", "2019-08-01 14:16:39.129217"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (175.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tirra Lirra by the River"], ["year", 1907], ["genre", "Fiction in verse"], ["synopsis", "My father was a writer. You would've liked him. He used to say that artists use lies to tell the truth, while politicians use them to cover the truth up."], ["director", "Dr. Masako Marks"], ["allocine_rating", 0.28], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:39.321865"], ["updated_at", "2019-08-01 14:16:39.321865"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (163.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "If I Forget Thee Jerusalem"], ["year", 1905], ["genre", "Crime/Detective"], ["synopsis", "Your own father said that artists use lies to tell the truth. Yes, I created a lie. But because you believed it, you found something true about yourself."], ["director", "Parthenia Toy"], ["allocine_rating", 0.25], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:39.499393"], ["updated_at", "2019-08-01 14:16:39.499393"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (250.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cabbages and Kings"], ["year", 1946], ["genre", "Narrative nonfiction"], ["synopsis", "We're under siege here, the whole city's gone mad!"], ["director", "Benito Oberbrunner V"], ["allocine_rating", 0.73], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:39.767172"], ["updated_at", "2019-08-01 14:16:39.767172"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (200.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Absalom, Absalom!"], ["year", 1923], ["genre", "Essay"], ["synopsis", "I told you, only truth. For 20 years, I sought only this day. Nothing else existed... until I saw you. Then everything changed. I fell in love with you Evey. And to think I no longer believed I could."], ["director", "Homer O'Hara"], ["allocine_rating", 0.47], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:39.978948"], ["updated_at", "2019-08-01 14:16:39.978948"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (140.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Taming a Sea Horse"], ["year", 1944], ["genre", "Metafiction"], ["synopsis", "Knowledge, like air, is vital to life. Like air, no one should be denied it."], ["director", "Laila Beatty II"], ["allocine_rating", 0.53], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:40.137173"], ["updated_at", "2019-08-01 14:16:40.137173"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (235.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "That Hideous Strength"], ["year", 1998], ["genre", "Metafiction"], ["synopsis", "Evey, please. There is a face beneath this mask but it's not me. I'm no more that face than I am the muscles beneath it or the bones beneath them."], ["director", "Sebastian Labadie"], ["allocine_rating", 0.47], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:40.386355"], ["updated_at", "2019-08-01 14:16:40.386355"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (184.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Needle's Eye"], ["year", 2010], ["genre", "Speech"], ["synopsis", "Vi Veri Veniversum Vivus Vici"], ["director", "Jerold Reinger"], ["allocine_rating", 0.75], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:40.581951"], ["updated_at", "2019-08-01 14:16:40.581951"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (136.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Parliament of Man"], ["year", 2018], ["genre", "Reference book"], ["synopsis", "A man does not wear a mask!"], ["director", "Dr. Beau Quitzon"], ["allocine_rating", 0.38], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:40.733189"], ["updated_at", "2019-08-01 14:16:40.733189"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (204.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alone on a Wide, Wide Sea"], ["year", 1905], ["genre", "Textbook"], ["synopsis", "Defiant to the end, huh? You won't cry like him, will you? You're not afraid of death. You're like me."], ["director", "Jc Hettinger"], ["allocine_rating", 0.64], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:40.950138"], ["updated_at", "2019-08-01 14:16:40.950138"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (126.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vile Bodies"], ["year", 2008], ["genre", "Fiction narrative"], ["synopsis", "I want this country to realize that we stand on the edge of oblivion. I want every man, woman and child to understand how close we are to chaos. I want everyone to remember why they need us!"], ["director", "Albert Zieme"], ["allocine_rating", 0.97], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:41.092550"], ["updated_at", "2019-08-01 14:16:41.092550"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (136.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Little Foxes"], ["year", 1902], ["genre", "Historical fiction"], ["synopsis", "Beneath this mask there is more than flesh. Beneath this mask there is an idea, Mr. Creedy. And ideas are bulletproof."], ["director", "Marge Fahey"], ["allocine_rating", 0.75], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:41.244249"], ["updated_at", "2019-08-01 14:16:41.244249"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (240.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Last Enemy"], ["year", 1930], ["genre", "Comic/Graphic Novel"], ["synopsis", "Sutler. Come now, Mr. Creedy, you knew this was coming. You knew that one day, it'd be you or him. That's why Sutler's been kept underground, for 'security purposes'. That's why there are several of your men close to Sutler. Men that could be counted on. All you have to do is say the word."], ["director", "Marylynn Gutmann"], ["allocine_rating", 0.69], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:41.496448"], ["updated_at", "2019-08-01 14:16:41.496448"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (252.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bury My Heart at Wounded Knee"], ["year", 1941], ["genre", "Suspense/Thriller"], ["synopsis", "After what happened. After what they did. I thought about killing myself. I knew that one day you'd come for me. I didn't know what they were going to do. I swear to you. Read my journal."], ["director", "Hilary Hackett"], ["allocine_rating", 0.43], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:41.763322"], ["updated_at", "2019-08-01 14:16:41.763322"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (239.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "For Whom the Bell Tolls"], ["year", 1930], ["genre", "Biography/Autobiography"], ["synopsis", "I told you, only truth. For 20 years, I sought only this day. Nothing else existed... until I saw you. Then everything changed. I fell in love with you Evey. And to think I no longer believed I could."], ["director", "Grant Lueilwitz"], ["allocine_rating", 0.49], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:42.014775"], ["updated_at", "2019-08-01 14:16:42.014775"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (204.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Clouds of Witness"], ["year", 1972], ["genre", "Fairy tale"], ["synopsis", "Because it's the only way you're ever going to stop me!"], ["director", "Ms. Veola Kautzer"], ["allocine_rating", 0.93], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:42.236400"], ["updated_at", "2019-08-01 14:16:42.236400"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (210.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "To Your Scattered Bodies Go"], ["year", 1933], ["genre", "Humor"], ["synopsis", "The Ghost of Christmas past."], ["director", "Ahmad Luettgen MD"], ["allocine_rating", 0.16], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:42.462186"], ["updated_at", "2019-08-01 14:16:42.462186"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (251.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Violent Bear It Away"], ["year", 1977], ["genre", "Crime/Detective"], ["synopsis", "I can't feel anything anymore!"], ["director", "Edwardo Adams"], ["allocine_rating", 0.45], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:42.729335"], ["updated_at", "2019-08-01 14:16:42.729335"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (241.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bury My Heart at Wounded Knee"], ["year", 1991], ["genre", "Realistic fiction"], ["synopsis", "Why should I trust you?"], ["director", "Noel Quitzon"], ["allocine_rating", 0.86], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:42.985982"], ["updated_at", "2019-08-01 14:16:42.985982"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (246.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "In a Glass Darkly"], ["year", 2007], ["genre", "Speech"], ["synopsis", "After what happened. After what they did. I thought about killing myself. I knew that one day you'd come for me. I didn't know what they were going to do. I swear to you. Read my journal."], ["director", "Coleman Dooley Jr."], ["allocine_rating", 0.53], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:43.252528"], ["updated_at", "2019-08-01 14:16:43.252528"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (210.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Number the Stars"], ["year", 1905], ["genre", "Tall tale"], ["synopsis", "Defiant to the end, huh? You won't cry like him, will you? You're not afraid of death. You're like me."], ["director", "Bryon Quitzon IV"], ["allocine_rating", 0.26], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:43.477628"], ["updated_at", "2019-08-01 14:16:43.477628"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (234.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Moving Finger"], ["year", 1966], ["genre", "Comic/Graphic Novel"], ["synopsis", "He was Edmond Dantés... and he was my father. And my mother... my brother... my friend. He was you... and me. He was all of us."], ["director", "Craig Bahringer"], ["allocine_rating", 0.35], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:43.724196"], ["updated_at", "2019-08-01 14:16:43.724196"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (235.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Green Bay Tree"], ["year", 1987], ["genre", "Fairy tale"], ["synopsis", "I told you, only truth. For 20 years, I sought only this day. Nothing else existed... until I saw you. Then everything changed. I fell in love with you Evey. And to think I no longer believed I could."], ["director", "Maynard Reinger"], ["allocine_rating", 0.34], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:43.971793"], ["updated_at", "2019-08-01 14:16:43.971793"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (200.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tiger! Tiger!"], ["year", 1945], ["genre", "Reference book"], ["synopsis", "Tonight's your big night. Are you ready for it?... Are we ready for it?"], ["director", "Fabian Daugherty Jr."], ["allocine_rating", 0.92], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:44.186573"], ["updated_at", "2019-08-01 14:16:44.186573"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (136.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Stranger in a Strange Land"], ["year", 1962], ["genre", "Fiction in verse"], ["synopsis", "Wait! Here comes the crescendo!"], ["director", "Tyrell Toy"], ["allocine_rating", 0.52], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:44.335341"], ["updated_at", "2019-08-01 14:16:44.335341"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (169.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Paths of Glory"], ["year", 1927], ["genre", "Short story"], ["synopsis", "Vi Veri Veniversum Vivus Vici"], ["director", "Allen Hackett"], ["allocine_rating", 0.75], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:44.513897"], ["updated_at", "2019-08-01 14:16:44.513897"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (206.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lilies of the Field"], ["year", 1912], ["genre", "Mystery"], ["synopsis", "I've not come for what you've hoped to do. I've come for what you did."], ["director", "Carlene Carroll"], ["allocine_rating", 0.46], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:44.732356"], ["updated_at", "2019-08-01 14:16:44.732356"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (139.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Passage to India"], ["year", 2016], ["genre", "Fairy tale"], ["synopsis", "You're insane!"], ["director", "Phil Lowe"], ["allocine_rating", 0.37], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:44.882287"], ["updated_at", "2019-08-01 14:16:44.882287"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (114.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Down to a Sunless Sea"], ["year", 1903], ["genre", "Tall tale"], ["synopsis", "By sun-up if you're not the sorriest piece of ass in all'a London... you'll certainly be the sorest!"], ["director", "Courtney Heller"], ["allocine_rating", 0.81], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:45.011180"], ["updated_at", "2019-08-01 14:16:45.011180"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (126.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Little Foxes"], ["year", 1968], ["genre", "Speech"], ["synopsis", "I am instructed to inform you that you have been convicted by special tribunal and that unless you are ready to offer your cooperation you are to be executed. Do you understand what I'm telling you?"], ["director", "Ms. Raylene Stamm"], ["allocine_rating", 0.04], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:45.149738"], ["updated_at", "2019-08-01 14:16:45.149738"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (159.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Postern of Fate"], ["year", 1930], ["genre", "Metafiction"], ["synopsis", "I want this country to realize that we stand on the edge of oblivion. I want every man, woman and child to understand how close we are to chaos. I want everyone to remember why they need us!"], ["director", "Ginette Lowe"], ["allocine_rating", 0.44], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:45.328004"], ["updated_at", "2019-08-01 14:16:45.328004"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (170.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "To Sail Beyond the Sunset"], ["year", 1930], ["genre", "Tall tale"], ["synopsis", "Do you have any idea how long it would take to rebuild this facility?"], ["director", "Pearlie Cassin"], ["allocine_rating", 0.46], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:45.506375"], ["updated_at", "2019-08-01 14:16:45.506375"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (140.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Endless Night"], ["year", 1911], ["genre", "Fiction in verse"], ["synopsis", "The time has come for me to meet my maker and to repay him in kind for all that he's done."], ["director", "Codi Mann"], ["allocine_rating", 0.21], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:45.657117"], ["updated_at", "2019-08-01 14:16:45.657117"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (139.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tender Is the Night"], ["year", 1983], ["genre", "Mythology"], ["synopsis", "I wish I wasn't afraid all the time, but... I am."], ["director", "Andy Lubowitz MD"], ["allocine_rating", 0.75], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:45.809280"], ["updated_at", "2019-08-01 14:16:45.809280"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (104.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Remembered Earth"], ["year", 2011], ["genre", "Biography/Autobiography"], ["synopsis", "Your powers of observation continue to serve you well."], ["director", "Bruno Rolfson MD"], ["allocine_rating", 0.53], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:45.925918"], ["updated_at", "2019-08-01 14:16:45.925918"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (147.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Consider the Lilies"], ["year", 1946], ["genre", "Science fiction"], ["synopsis", "I wish I believed that was possible. But every time I've seen this world change, it's always been for the worse."], ["director", "Ute Schoen"], ["allocine_rating", 0.29], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:46.088663"], ["updated_at", "2019-08-01 14:16:46.088663"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (192.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Great Work of Time"], ["year", 2012], ["genre", "Horror"], ["synopsis", "Is that what you really think, or what they would want you to think?"], ["director", "Duncan Kub V"], ["allocine_rating", 0.47], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:46.294527"], ["updated_at", "2019-08-01 14:16:46.294527"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (201.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Of Human Bondage"], ["year", 1952], ["genre", "Mythology"], ["synopsis", "Bollocks. Whatchya gonna do, huh? We've swept this place. You've got nothing. Nothing but your bloody knives and your fancy karate gimmicks. We have guns."], ["director", "Lauralee Raynor"], ["allocine_rating", 0.22], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:46.514688"], ["updated_at", "2019-08-01 14:16:46.514688"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (133.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Golden Bowl"], ["year", 1988], ["genre", "Fairy tale"], ["synopsis", "There's no certainty - only opportunity."], ["director", "April Yundt"], ["allocine_rating", 0.04], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:46.665426"], ["updated_at", "2019-08-01 14:16:46.665426"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (166.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "East of Eden"], ["year", 1938], ["genre", "Classic"], ["synopsis", "You... it is you!"], ["director", "Patti Littel"], ["allocine_rating", 0.99], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:46.846968"], ["updated_at", "2019-08-01 14:16:46.846968"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (222.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "To Say Nothing of the Dog"], ["year", 2008], ["genre", "Speech"], ["synopsis", "I want anyone caught with one of those masks arrested!"], ["director", "Roland Wilderman"], ["allocine_rating", 0.76], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:47.078451"], ["updated_at", "2019-08-01 14:16:47.078451"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (169.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bury My Heart at Wounded Knee"], ["year", 2016], ["genre", "Fantasy"], ["synopsis", "I want this country to realize that we stand on the edge of oblivion. I want every man, woman and child to understand how close we are to chaos. I want everyone to remember why they need us!"], ["director", "Gene Altenwerth Sr."], ["allocine_rating", 0.12], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:47.256067"], ["updated_at", "2019-08-01 14:16:47.256067"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (125.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Great Work of Time"], ["year", 2012], ["genre", "Fable"], ["synopsis", "This so called V and his accomplice Evey Hammond, neo-demagogues spouting their message of hate, a delusional and aberrant voice delivering a terrorist's ultimatum... An ultimatum that was met with swift, surgically precise justice! The moral of this story ladies and gentleman is... Good guys win, bad guys lose, and as always, England prevails!"], ["director", "Sherri Simonis"], ["allocine_rating", 0.73], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:47.390118"], ["updated_at", "2019-08-01 14:16:47.390118"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (116.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Moab Is My Washpot"], ["year", 1931], ["genre", "Fiction in verse"], ["synopsis", "And thus I clothe my naked villainy, with old odd ends stolen forth from holy writ and seem a saint when most I play the devil."], ["director", "Zack Luettgen"], ["allocine_rating", 0.23], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:47.516815"], ["updated_at", "2019-08-01 14:16:47.516815"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (96.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "In a Glass Darkly"], ["year", 2010], ["genre", "Folklore"], ["synopsis", "You're insane!"], ["director", "Maximo Nitzsche"], ["allocine_rating", 0.61], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:47.625827"], ["updated_at", "2019-08-01 14:16:47.625827"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (136.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "This Side of Paradise"], ["year", 2001], ["genre", "Horror"], ["synopsis", "People should not be afraid of their governments. Governments should be afraid of their people."], ["director", "Leonel O'Connell"], ["allocine_rating", 0.01], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:47.773179"], ["updated_at", "2019-08-01 14:16:47.773179"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Skull Beneath the Skin"], ["year", 1970], ["genre", "Horror"], ["synopsis", "Conceal me what I am, and be my aid For such disguise as haply shall become The form of my intent."], ["director", "Rocio Nienow"], ["allocine_rating", 0.78], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:47.882187"], ["updated_at", "2019-08-01 14:16:47.882187"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (219.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cover Her Face"], ["year", 1960], ["genre", "Fiction narrative"], ["synopsis", "After what happened. After what they did. I thought about killing myself. I knew that one day you'd come for me. I didn't know what they were going to do. I swear to you. Read my journal."], ["director", "Denisha Bauch"], ["allocine_rating", 0.27], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:48.115137"], ["updated_at", "2019-08-01 14:16:48.115137"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (237.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "When the Green Woods Laugh"], ["year", 1904], ["genre", "Science fiction"], ["synopsis", "Your powers of observation continue to serve you well."], ["director", "Dionna Cremin"], ["allocine_rating", 0.55], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:48.363106"], ["updated_at", "2019-08-01 14:16:48.363106"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (210.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "An Instant In The Wind"], ["year", 1945], ["genre", "Horror"], ["synopsis", "Yes, Evey. I am V. At last you know the truth. You're stunned, I know. It's hard to believe isn't it, that beneath this wrinkled, well-fed exterior there lies a dangerous killing machine with a fetish for Fawkesian masks. ¡Viva la revolución!"], ["director", "Ronald Reilly"], ["allocine_rating", 0.21], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:48.584903"], ["updated_at", "2019-08-01 14:16:48.584903"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (239.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Summer Bird-Cage"], ["year", 1958], ["genre", "Narrative nonfiction"], ["synopsis", "After what happened. After what they did. I thought about killing myself. I knew that one day you'd come for me. I didn't know what they were going to do. I swear to you. Read my journal."], ["director", "Elisha Miller"], ["allocine_rating", 0.87], ["my_rating", 0], ["already_seen", 1], ["created_at", "2019-08-01 14:16:48.841133"], ["updated_at", "2019-08-01 14:16:48.841133"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (233.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Remembered Earth"], ["year", 1966], ["genre", "Western"], ["synopsis", "I remember them arguing at night. Mum wanted to leave the country. Dad refused. He said if we ran away, they would win. Win, like it was a game."], ["director", "Damian Morar"], ["allocine_rating", 0.86], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:49.087353"], ["updated_at", "2019-08-01 14:16:49.087353"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (252.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "In a Dry Season"], ["year", 1909], ["genre", "Folklore"], ["synopsis", "A man after my own heart."], ["director", "Miss Ehtel Beer"], ["allocine_rating", 0.72], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:49.351815"], ["updated_at", "2019-08-01 14:16:49.351815"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (239.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Golden Bowl"], ["year", 1969], ["genre", "Narrative nonfiction"], ["synopsis", "Spare us your professional annotations, Mr. Finch. They are irrelevant."], ["director", "Mrs. Isreal Adams"], ["allocine_rating", 0.25], ["my_rating", 0], ["already_seen", 0], ["created_at", "2019-08-01 14:16:49.604310"], ["updated_at", "2019-08-01 14:16:49.604310"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (245.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Load (2.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
